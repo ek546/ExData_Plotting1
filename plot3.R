@@ -9,7 +9,7 @@ table$date_time <- as.POSIXct(strptime(paste(table$Date, table$Time, sep=" "),
 melted <- melt(table, measure.vars=c("Sub_metering_1", "Sub_metering_2",
                                      "Sub_metering_3"))
 
-png(filename = "Rplot3.png", width = 480, height = 480)
+png(filename = "plot3.png", width = 480, height = 480)
 with(melted, plot(date_time, value, type = "n", ylab="Energy sub metering",
                   xlab=""))
 with(subset(melted, variable=="Sub_metering_1"),

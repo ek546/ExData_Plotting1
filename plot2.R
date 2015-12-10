@@ -5,7 +5,7 @@ table <- read.table("household_power_consumption.txt", sep=";", header=F,
 table$date_time <- as.POSIXct(strptime(paste(table$Date, table$Time, sep=" "), 
                                        format="%d/%m/%Y %H:%M:%S"))
 
-png(filename = "Rplot2.png", width = 480, height = 480)
+png(filename = "plot2.png", width = 480, height = 480)
 plot(table$Global_active_power~table$date_time, type="l", xlab=
        "", ylab = "Global Active Power (kilowatts)")
 dev.off()
